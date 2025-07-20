@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bobastic Tea Restaurant</title>
+    <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+    <!-- main menu -->
+    <div class="container" id="title-screen">
+        <h1 id="gamename">BOBASTIC TEA</h1>
+        <div id="flavourtext"></div>
+        <div id="thebuttons">
+            <button class="difficultybutton" onclick="begin()">Easy</button>
+            <button class="difficultybutton" onclick="begin()">Hard</button>
+            <button class="difficultybutton" onclick="openhowto()">How To Play</button>
+        </div>
+        <div id="instructions" class="popup">
+            <div class="popup-content">
+                <h2>How To Play</h2>
+                lorem ipsum <br /> <br />
+                <button onclick="closehowto()">Understood!</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container" id="order-screen">
+        <div class="centerer">
+            <div class="orderbutton">
+                <button class="difficultybutton" onclick="orderup()" id="orderbutton">Take Order</button>
+            </div>
+            <button id="next1" onclick="nextpage()">Next!</button>
+        </div>
+    </div>
+
+    <div class="container" id="toppings1-screen">
+        <div class="toppings-container">
+            <div class="topping" id="rainbow-jelly" onclick="fill(1, 2, 'Rainbow Jelly', 'red')">Rainbow Jelly</div>
+            <div class="topping" id="tapioca" onclick="fill(1, 1, 'Tapioca', 'brown')">Tapioca</div>
+            <div class="topping" id="grass-jelly" onclick="fill(1, 3, 'Grass Jelly', 'green')">Grass Jelly</div>
+        </div>
+        <button class="nextbutton" onclick="nextpage()">Next!</button>
+        <button class="resetbutton" onclick="reset()">Reset</button>
+    </div>
+    
+    <div class="container" id="toppings2-screen">
+        <div class="toppings-container">
+            <div class="topping" id="pearl" onclick="fill(2, 1, 'Popping Pearl', 'palegoldenrod')">Popping Pearl</div>
+            <div class="topping" id="pudding" onclick="fill(2, 2, 'Pudding', 'lightyellow')">Pudding</div>
+            <div class="topping" id="oreo" onclick="fill(2, 3, 'Oreo Bits', 'chocolate')">Oreo Bits</div>
+        </div>
+        <button class="prevbutton" onclick="prevpage()">Previous</button>
+        <button class="nextbutton" onclick="nextpage()">Next!</button>
+        <button class="resetbutton" onclick="reset()">Reset</button>
+    </div>
+
+    <div class="container" id="base-screen">
+        <div class="toppings-container">
+            <div class="base" id="taro" onclick="fill(0, 2, 'Taro Milk Tea', 'violet')">Taro Milk Tea</div>
+            <div class="base" id="passion" onclick="fill(0, 4, 'Passionfruit Tea', 'orange')">Passionfruit Tea</div>
+            <div class="base" id="milk" onclick="fill(0, 1, 'Milk Tea', 'peachpuff')">Milk Tea</div>
+            <div class="base" id="matcha" onclick="fill(0, 3, 'Matcha Green Tea', 'yellowgreen')">Matcha Green Tea</div>
+        </div>
+        <button class="prevbutton" onclick="prevpage()">Previous</button>
+        <button class="nextbutton" onclick="nextpage()">All done!</button>
+        <button class="resetbutton" onclick="reset()">Reset</button>
+    </div>
+
+    <div class="container" id="final-screen">
+        <div class="centerer">
+            <div id="time-took"> </div>
+            <div id="final-score"> </div>
+            <button onclick="nextpage()">Another order!</button>
+        </div>
+    </div>
+
+    <canvas id="thecanvas">sigma</canvas>
+
+    <div id="order">
+        <p id="strnum">Order #</p>
+        Current Order: <br />
+        <b id="strbase"></b> <br />
+        <b id="strtop1"></b> <br />
+        <b id="strtop2"></b> <br />
+        Current Drink: <br />
+        <b class="urorder" id="urbase"></b> <br />
+        <b class="urorder" id="urtop1"></b> <br />
+        <b class="urorder" id="urtop2"></b> <br />
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
