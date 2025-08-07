@@ -196,30 +196,28 @@ function stoptime() {
 }
 
 function fill(a, b, c, d) {
-    updatetext(a, c);
-    fillcup(a, b);
-    if (a == 0) {
-        drawbase(d);
-    }
-    else if (a == 1) {
-        drawtop1(d);
-    }
-    else {
-        drawtop2(d);
+    if (drink[a] == 0) {
+        updatetext(a, c);
+        fillcup(a, b);
+        if (a == 0) {
+            drawbase(d);
+        }
+        else if (a == 1) {
+            drawtop1(d);
+        }
+        else {
+            drawtop2(d);
+        }
     }
 }
 
 function fillcup(a, b) {
-    if (drink[a] == 0) {
-        drink[a] = b;
-    }
+    drink[a] = b;
 }
 
 function updatetext(a, c) {
-    if (drink[a] == 0) {
-        the = document.getElementsByClassName("urorder");
-        the[a].innerHTML = c;
-    }
+    the = document.getElementsByClassName("urorder");
+    the[a].innerHTML = c;
 }
 
 async function checkdrink() {
